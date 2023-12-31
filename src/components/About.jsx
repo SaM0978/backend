@@ -6,9 +6,7 @@ export default function About() {
   return (
     <>
       {" "}
-      <div>
-        This is about {a.state.name} and he is in class {a.state.class}{" "}
-      </div>{" "}
+      <div>This is about Abdus Samad and he is in class 9F</div>{" "}
     </>
   );
 }

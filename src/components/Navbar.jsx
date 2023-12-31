@@ -22,25 +22,19 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
-                className="nav-link active"
-                aria-current="page"
-                to="https://google.com"
-                target="_blank"
-              >
+              <Link className="nav-link active" aria-current="page" to="/">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about" target="_blank">
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="https://google.com"
-                target="_blank"
+                to="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -49,34 +43,18 @@ export default function Navbar() {
               </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="https://google.com"
-                    target="_blank"
-                  >
+                  <Link className="dropdown-item" to="/">
                     Action
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="https://google.com"
-                    target="_blank"
-                  >
-                    Another action
-                  </Link>
+                  <Link className="dropdown-item">Another action</Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="https://google.com"
-                    target="_blank"
-                  >
-                    Something else here
-                  </Link>
+                  <Link className="dropdown-item">Something else here</Link>
                 </li>
               </ul>
             </li>

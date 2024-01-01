@@ -65,6 +65,8 @@ export default function Navbar() {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              name="filter"
+              autoComplete="filter"
             />
             <button className="btn btn-outline-success" type="submit">
               Search

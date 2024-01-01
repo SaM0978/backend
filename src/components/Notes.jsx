@@ -13,6 +13,7 @@ const Notes = () => {
   }, []);
   const ref = useRef(null);
   const refClose = useRef(null);
+  const refUpdate = useRef(null); // Added ref for the "Update Note" button
   const [note, setNote] = useState({
     id: "",
     etitle: "",
@@ -30,13 +31,18 @@ const Notes = () => {
     });
   };
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     editNote(note.id, note.etitle, note.edescription, note.etag);
     refClose.current.click();
   };
 
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
+  };
+
+  // Function to programmatically trigger the "Update Note" button
+  const triggerUpdate = () => {
+    refUpdate.current.click();
   };
 
   return (
@@ -114,6 +120,7 @@ const Notes = () => {
                     id="etag"
                     name="etag"
                     value={note.etag}
+                    minLength={1}
                     onChange={onChange}
                   />
                 </div>
@@ -128,13 +135,15 @@ const Notes = () => {
               >
                 Close
               </button>
+              {/* "Update Note" button with ref */}
               <button
                 disabled={
                   note.etitle.length < 5 || note.edescription.length < 5
                 }
-                onClick={handleClick}
-                type="button"
+                type="submit"
                 className="btn btn-primary"
+                onClick={handleClick}
+                ref={refUpdate}
               >
                 Update Note
               </button>
